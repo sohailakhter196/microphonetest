@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Microphone Tester</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-light">
+    <div class="container w-50 py-5">
+      <div class="card shadow-lg rounded-4 p-4 border-0">
+        <h2 class="text-center mb-4">🎙️ Advanced Microphone Tester</h2>
+
+        <div class="mb-4">
+          <label for="micSelect" class="form-label">🎧 Select Microphone</label>
+          <select id="micSelect" class="form-select"></select>
+        </div>
+
+        <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
+          <div class="form-check form-switch">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="noiseSuppressionToggle"
+            />
+            <label class="form-check-label" for="noiseSuppressionToggle">
+              Noise Suppression
+            </label>
+          </div>
+          <div class="d-flex align-items-center">
+            <label for="gainControl" class="me-2">Gain</label>
+            <input
+              type="range"
+              class="form-range w-100"
+              min="0"
+              max="2"
+              step="0.1"
+              id="gainControl"
+            />
+          </div>
+          <div class="form-check form-switch">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="loopbackToggle"
+            />
+            <label class="form-check-label" for="loopbackToggle">
+              Loopback Mode
+            </label>
+          </div>
+        </div>
+
+        <div class="text-center mb-4">
+          <button class="btn btn-primary me-2 px-4" id="startBtn">
+            🎤 Start
+          </button>
+          <button
+            class="btn btn-outline-danger me-2 px-4"
+            id="stopBtn"
+            disabled
+          >
+            🛑 Stop
+          </button>
+          <button class="btn btn-success px-4" id="downloadBtn" disabled>
+            ⬇️ Download
+          </button>
+        </div>
+
+        <div class="d-flex justify-content-between small text-muted mb-2">
+          <div>
+            <strong>Status:</strong>
+            <span id="status" class="text-danger">Not Connected</span>
+          </div>
+          <div class="timming">
+            <strong>Recording:</strong>
+            <span id="timer" class="text-dark">00:00</span>
+          </div>
+        </div>
+
+        <div class="my-3">
+          <label class="mb-1">Volume Level</label>
+          <div class="progress rounded-pill" style="height: 12px">
+            <div
+              id="volumeBar"
+              class="progress-bar bg-info"
+              style="width: 0%"
+            ></div>
+          </div>
+        </div>
+
+        <canvas id="waveform" class="visualizer mb-3 rounded-3"></canvas>
+        <canvas id="spectrum" class="visualizer mb-3 rounded-3"></canvas>
+
+        <audio id="playback" class="w-100 mt-3" controls hidden></audio>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f8f9fa;
+}
+
+.visualizer {
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to right, #f0f0f0, #ffffff);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #dee2e6;
+}
+
+.progress {
+  background-color: #e9ecef;
+}
+
+.card {
+  background: white;
+  border-radius: 20px;
+}
+.timming {
+  display: none;
+}
