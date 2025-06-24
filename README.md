@@ -21,5 +21,5 @@ Here’s a quick preview of the interface:
 
 ✅ Privacy Friendly — Audio stays on your device; we never record or upload anything.
 
-⚠️ Error Handling — Clear messages if mic permissions are denied or device not found.
+
 
