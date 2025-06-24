@@ -1,24 +1,169 @@
 body {
-  font-family: "Segoe UI", sans-serif;
-  background-color: #f8f9fa;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #fff;
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  overflow: hidden;
 }
 
 .visualizer {
   width: 100%;
-  height: 100px;
-  background: linear-gradient(to right, #f0f0f0, #ffffff);
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-  border: 1px solid #dee2e6;
+  height: 60px;
+  background: linear-gradient(to bottom, #f8f9fa, #ffffff);
+  border-radius: 0.75rem;
+  margin-bottom: 0.5rem;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.form-control,
+.form-select,
+.form-range {
+  border: 1px solid #dfd0b8;
+  border-radius: 0.75rem;
+  padding: 0.5rem 1rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #393e46;
+  box-shadow: 0 0 0 0.25rem rgba(57, 62, 70, 0.15);
+}
+
+.btn {
+  border-radius: 0.75rem;
+  padding: 0.5rem 1.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #393e46 0%, #222831 100%);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #222831 0%, #393e46 100%);
+  transform: translateY(-2px);
+}
+
+.btn-outline-danger {
+  background: transparent;
+  border: 2px solid #393e46;
+  color: #393e46;
+}
+
+.btn-outline-danger:hover {
+  background: #393e46;
+  color: white;
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #948979 0%, #393e46 100%);
+}
+
+.btn-success:hover {
+  background: linear-gradient(135deg, #393e46 0%, #948979 100%);
+  transform: translateY(-2px);
 }
 
 .progress {
-  background-color: #e9ecef;
+  height: 0.75rem;
+  border-radius: 0.75rem;
+  background-color: #dfd0b8;
 }
 
-.card {
-  background: white;
-  border-radius: 20px;
+.progress-bar {
+  background: linear-gradient(90deg, #948979 0%, #393e46 100%);
+  border-radius: 0.75rem;
 }
-.timming {
-  display: none;
+
+.form-switch .form-check-input {
+  width: 3em;
+  height: 1.5em;
+  margin-right: 0.5rem;
+}
+
+.form-switch .form-check-input:checked {
+  background-color: #393e46;
+  border-color: #393e46;
+}
+
+.blinking {
+  animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.status-indicator {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.status-danger {
+  background-color: #ff4757;
+}
+
+.status-success {
+  background-color: #2ecc71;
+  box-shadow: 0 0 10px #2ecc71;
+}
+
+.timer {
+  font-family: "Courier New", monospace;
+  font-weight: bold;
+  color: #393e46;
+}
+
+h2 {
+  color: #222831;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+h2::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #393e46 0%, #948979 100%);
+  border-radius: 3px;
+}
+
+.control-group {
+  background: rgba(223, 208, 184, 0.2);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-range::-webkit-slider-thumb {
+  background: #393e46;
+}
+
+.form-range::-moz-range-thumb {
+  background: #393e46;
 }
